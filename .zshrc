@@ -1,7 +1,7 @@
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source "${HOME}/zgen/zgen.zsh"
+source "${HOME}/dotfiles/zgen/zgen.zsh"
 
 if ! zgen saved; then
   zgen oh-my-zsh
