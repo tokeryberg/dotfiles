@@ -20,9 +20,11 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'lervag/vimtex'
 Plugin 'rizzatti/dash.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'rking/ag.vim'
-Plugin 'Shougo/unite.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'sgur/ctrlp-extensions.vim'
+Plugin 'terryma/vim-multiple-cursors'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -87,17 +89,12 @@ nmap <leader>h :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 
-let g:unite_source_history_yank_enable = 1
-try
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
-  call unite#filters#matcher_default#use(['matcher_fuzzy'])
-catch
-endtry
 
-nnoremap <space><space> :<C-u>Unite -start-insert file_rec/async<cr>
-:nnoremap <space>r <Plug>(unite_restart)
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden  -g ""'
+endif
 
 noremap <F3> :Autoformat<CR>
 
-nmap ° :Ag <c-r>=expand("<cword>")<cr><cr>
-nnoremap <space>/ :Ag
+"nmap ° :Ag <c-r>=expand("<cword>")<cr><cr>
+"nnoremap <space>/ :Ag

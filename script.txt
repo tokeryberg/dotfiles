@@ -6,3 +6,4 @@ http://input.fontbureau.com/build/?fontSelection=whole&a=0&g=0&i=0&l=0&zero=0&as
 #link zshrc
 
 ln -s "$HOME/Private/dotfiles/.zshrc" "$HOME/.zshrc"
+ln -s "$HOME/Private/dotfiles/.vimrc" "$HOME/.vimrc"
