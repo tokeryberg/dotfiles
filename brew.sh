@@ -1,3 +1,4 @@
+#!/bin/bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew doctor
@@ -6,7 +7,6 @@ brew install zsh
 brew install git
 brew install vim --override-system-vi
 brew install tmux
-brew install nvm
 brew install python
 brew install htop
 brew install coreutils
